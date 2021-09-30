@@ -19,3 +19,20 @@ To change a port of an application set the `PORT` environment variable:
 $ PORT=6666 node app.js
 Product REST API application listening at http://localhost:6666
 ```
+
+## Using the application
+
+To create new product, execute the following command:
+
+```
+$ curl -X POST localhost:8080/product -d '{"title":"The Office DVD", "price": 49.99}' -H "C
+ontent-Type: application/json"
+{"id":1}
+```
+
+Then use the product ID you have received to get the product from the REST API:
+
+```
+$ curl localhost:8080/product/1
+{"title":"The Office DVD","price":49.99}
+```
