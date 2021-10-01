@@ -36,3 +36,17 @@ Then use the product ID you have received to get the product from the REST API:
 $ curl localhost:8080/product/1
 {"title":"The Office DVD","price":49.99}
 ```
+
+## Building application
+
+To build an application as Docker image, execute the following command:
+
+```bash
+docker build . -t myapp
+```
+
+Then run it with the following command:
+
+```bash
+docker run -e PORT=8081 -p 8081:8081 -it myapp 
+```
